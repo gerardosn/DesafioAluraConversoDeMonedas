@@ -10,8 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ConversionRates {
-     private final Dotenv dotenv = Dotenv.configure().load();
-     private final String API_KEY = dotenv.get("API_KEY");
+    private final Dotenv dotenv = Dotenv.configure().load();
+    private final String API_KEY = dotenv.get("API_KEY");
     private  final String API_URL = "https://v6.exchangerate-api.com/v6/"+API_KEY+"/latest/";
 
     public double consultarTasaCambio(String origenMoneda, String destinoMoneda) {
