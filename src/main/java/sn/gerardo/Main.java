@@ -7,10 +7,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         boolean contStatus = true;
-        System.out.println("Conversor de monedas.");
-        System.out.println("GerardoSN - Alura Latam");
+
+        mostrarRecuadro("Conversor de monedas.","GerardoSN - Alura Latam.");
 
         while (contStatus) {
             System.out.println("\nNueva conversion.");
@@ -30,16 +29,38 @@ public class Main {
 
             double montoConvertido = monto * tasaCambio;
             BigDecimal montoConvertidoCon4Decimales = new BigDecimal(montoConvertido);
-            montoConvertidoCon4Decimales = montoConvertidoCon4Decimales.setScale(4, RoundingMode.HALF_UP);
+            montoConvertidoCon4Decimales = montoConvertidoCon4Decimales.setScale(4, RoundingMode.HALF_UP);//se redonde el resultado con cuatro ceros
 
             System.out.println("El monto convertido es: " + montoConvertidoCon4Decimales + " " + destinoMoneda);
 
             System.out.println("¿Desea continuar? (SI - NO): ");
             if (scanner.nextLine().toUpperCase().equals("NO")){
                 contStatus = false;
-                System.out.println("Gracias por utilizar nuestros servicios. \nHasta pronto.");
             }
         }
 
+        mostrarRecuadro("Gracias por utilizar nuestros servicios.","Hasta pronto.");
+
+    }
+
+    public static void mostrarRecuadro(String texto1, String texto2) {
+        String textoLargo = "Ingrese la moneda destino (ARS - USD - BRL - CLP): ";
+
+        // Calcular el ancho del recuadro
+        int ancho = textoLargo.length() + 4; // +4 para los bordes
+        String borde = "═".repeat(ancho); // Línea superior del recuadro
+
+        // Imprimir el recuadro
+        System.out.println(borde);
+        System.out.println("║ " + centrarTexto(texto1, ancho - 2) + " ║");
+        System.out.println("║ " + centrarTexto(texto2, ancho - 2) + " ║");
+        System.out.println(borde);
+    }
+    // Metodo para centrar el texto
+    public static String centrarTexto(String texto, int ancho) {
+        int espacio = ancho - texto.length();
+        int izquierda = espacio / 2;
+        int derecha = espacio - izquierda;
+        return " ".repeat(izquierda) + texto + " ".repeat(derecha);
     }
 }
