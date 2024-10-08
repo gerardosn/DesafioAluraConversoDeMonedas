@@ -34,6 +34,10 @@ public class Main {
 
             System.out.println("El monto convertido es: " + montoConvertidoCon4Decimales + " " + destinoMoneda);
 
+            // Guardar registro
+            Registros registros = new Registros();
+            registros.guardarRegistro(origenMoneda, destinoMoneda, monto);
+
             System.out.println("¿Desea continuar? (SI - NO): ");
             if (scanner.nextLine().toUpperCase().equals("NO")){
                 contStatus = false;

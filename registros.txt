@@ -1,0 +1,3 @@
+{"origenMoneda":"USD","destinoMoneda":"ARS","monto":11.22,"hora":"2024-10-08 16:33:35"}
+{"origenMoneda":"ARS","destinoMoneda":"BRL","monto":1235.0,"hora":"2024-10-08 16:38:00"}
+{"origenMoneda":"ARS","destinoMoneda":"CLP","monto":456.3,"hora":"2024-10-08 16:40:25"}
