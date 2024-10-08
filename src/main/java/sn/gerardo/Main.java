@@ -18,8 +18,9 @@ public class Main {
             String origenMoneda = scanner.nextLine().toUpperCase();
 
             System.out.println("Ingrese el monto: ");
-            double monto = scanner.nextDouble();
-            scanner.nextLine(); //Consumir lo que queda
+            String input = scanner.nextLine(); // Leer la entrada como String
+            input = input.replace(",", ".");// Reemplazar la coma por un punto
+            double monto = Double.parseDouble(input);// Convertir a double
 
             System.out.println("Ingrese la moneda destino (ARS - USD - BRL - CLP): ");
             String destinoMoneda = scanner.nextLine().toUpperCase();
